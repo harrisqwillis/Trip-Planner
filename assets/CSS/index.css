@@ -69,8 +69,8 @@
   }
 
   .container {
-    width: 30vw;
-    height: 60vh;
+    width: 600px;
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,9 +80,9 @@
     background-color: whitesmoke;
     border-radius: 50%;
     margin-top: 100px;
-    background-image: url("/Assets/IMAGES/earth.jpg");
+    background-image: url("/Assets/IMAGES/earth.gif");
     background-position: center;
-    background-size: 260%;
+    background-size: 160%;
   }
 
   .flex-column {
@@ -101,6 +101,7 @@
 
   h1 {
     margin-bottom: 50px;
+    color: #fff;
   }
 
   button {
@@ -111,9 +112,15 @@
     transition: .2s;
   }
 
-  button:hover, a:hover {
+  a:hover {
     cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, .5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+  }
+
+  button:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(0, 0, 119);
     transform: translateY(-0.1rem);
     transition: transform 150ms;
   }
