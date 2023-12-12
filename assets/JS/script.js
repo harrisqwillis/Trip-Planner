@@ -1,20 +1,33 @@
-var city = /* document.getElementById(#); */ 'Paris';
-var tripStart = /* document.getElementById(#); */ '2023-01-01';
+//the location and time variables will be pulled from the form
+var city = /* document.getElementById("#""); */ 'Paris';
+var tripStart = /* document.getElementById("#""); */ '2024-01-01';
 var main = document.querySelector(".main");
+var weatherDisplay = document.getElementById("weather-display");
+
+//will add onclick function for "get started" button to bring up form and store the variables from the form in local storage
 
 function getApi() {
     var requestUrl = 'https://api.weatherapi.com/v1/future.json?key=ffd028c4f113423dad624715230812&q=' + city + '&dt=' + tripStart;
   
-    fetch(requestUrl)
-      .then(function (response) {
-        console.log(response);
-        main.appendChild(response);
-        return response.json();
+    fetch(requestUrl).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                var weather = data.forecast.forecastday[0].day;
+                displayWeather(weather.maxtemp_f);
+                displayWeather(weather.avgtemp_f);
+                displayWeather(weather.mintemp_f);
+                displayWeather(weather.totalprecip_in);
+                console.log(data);
+            })
+        }
       })
   }
-
 getApi();
 
-function displayWeather() {
-
+function displayWeather(future) {
+    var forecastItem = document.createElement('div');
+    weatherDisplay.appendChild(forecastItem);
+    forecastItem.classList = 'enter tailwind classes';
+    forecastItem.innerHTML = future;
 }
+//for the weather values we could make an outline in html that has boxes with text saying "max temp", "average temp", etc and then append each forecast item to its relevant container

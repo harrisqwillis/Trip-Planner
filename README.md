@@ -1,3 +1,6 @@
+<<<<<<< html-code
+# collab-1
+=======
 # Trip Planner 
 
 ## Description
@@ -32,3 +35,4 @@ Ryan Gurley
 ## License
 
 Please refer to the LICENSE in the repo.
+>>>>>>> main
