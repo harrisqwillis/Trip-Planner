@@ -78,7 +78,7 @@
     background-color: whitesmoke;
     border-radius: 50%;
     margin-top: 100px;
-    background-image: url("/assets/IMAGES/earth.gif");
+    background-image: url('../IMAGES/earth.gif');
     background-position: center;
     background-size: 160%;
   }

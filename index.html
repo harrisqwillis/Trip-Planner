@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/CSS/output.css">
+    <link rel="stylesheet" href="./assets/CSS/output.css">
+    <link rel="stylesheet" href="./assets/CSS/input.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <!-- npx tailwindcss -i ./assets/CSS/input.css -o ./assets/CSS/output.css --watch -->
     <title>Trip Planner</title>
 </head>
@@ -17,7 +19,7 @@
         <div class="container">
             <div class="flex-center flex-column">
                 <h1>Welcome To Trip Planner!</h1>
-                <button>Get Started!</button>
+                <button><a href="#ex1" rel="modal:open">Get Started!</a></button>
                 
             </div>
         </div>
@@ -27,20 +29,20 @@
     <div id="ex1" class="modal">
         <p>
             <label>Where are you going?</label>
-            <input type="text" class="city">
+            <input style="border: 1px solid black;" type="text" class="city">
         </p>
         <p>
             <label>When are you arriving?</label>
-            <input type="text" class="tripStart">
+            <input style="border: 1px solid black;" type="text" class="tripStart">
         </p>
         <p>
             <label>When are you returning home?</label>
-            <input type="text" class="tripEnd">
+            <input style="border: 1px solid black;" type="text" class="tripEnd">
         </p>
-        <br><button class="formSubmit" onclick="setValues()"><a href="./advisor.html">Submit</a></button>
+        <br><button style="background-color:black;" class="formSubmit" onclick="setValues()"><a href="./advisor.html">Submit</a></button>
         <!-- <a href="#" rel="modal:close">Close</a> -->
     </div>
-    <!-- Remember to include jQuery :) -->
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 
     <!-- jQuery Modal -->
