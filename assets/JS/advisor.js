@@ -34,7 +34,10 @@ function getAdvisor() {
     var options = {
         method: 'GET',
         // mode: 'no-cors',
-        headers: { accept: 'application/json' }
+        headers: {
+            accept: 'application/json',
+            referrer: 'https://harrisqwillis.github.io'
+        }
     };
 
     fetch(requestUrl, options).then(function (response) {
