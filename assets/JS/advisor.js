@@ -28,3 +28,24 @@ function getApi() {
       })
 }
 getApi();
+
+function getAdvisor() {
+    var requestUrl = 'https://api.content.tripadvisor.com/api/v1/location/search?key=B023F0317F4C4F7FABFEB3113D8B5FD2&searchQuery=' + city + '&language=en';
+    var options = { method: 'GET', mode: 'no-cors', headers: { accept: 'application/json' } };
+
+    fetch(requestUrl, options).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                console.log(data);
+            })
+        }
+    })
+};
+
+getAdvisor();
+
+function displayAdvisor() {
+
+};
+
+displayAdvisor();
