@@ -5,6 +5,7 @@ var tripEnd = JSON.parse(localStorage.getItem("tripEnd"));
 
 function displayWeather(future) {
     var forecastItem = document.createElement('div');
+    forecastItem.style.color = "white";
     weatherDisplay.appendChild(forecastItem);
     forecastItem.classList = 'enter tailwind classes';
     forecastItem.innerHTML = future;
