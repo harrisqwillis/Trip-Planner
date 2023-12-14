@@ -27,9 +27,9 @@
         <dialog class="modal">
             <form class="form flex-center flex-column" method="dialog">
 
-                <label class="label">Enter City<input class="input" type="text" placeholder="City"></label>
-                <label class="label">Start Date<input class="input" type="text" placeholder="MM/DD/YY"></label>
-                <label class="label">End Date<input class="input" type="text" placeholder="MM/DD/YY"></label>
+                <label class="label">Enter City<input class="input city" type="text" placeholder="City"></label>
+                <label class="label">Start Date<input class="input tripStart" type="text" placeholder="MM/DD/YY"></label>
+                <label class="label">End Date<input class="input tripEnd" type="text" placeholder="MM/DD/YY"></label>
                 <button class="submit-button" id="close" type="submit">Submit</button>
             </form>
         </dialog>
@@ -48,15 +48,15 @@
     <div id="ex1" class="modal">
         <p>
             <label>Where are you going?</label>
-            <input style="border: 1px solid black;" type="text" class="city">
+            <input style="border: 1px solid black;" type="text" class="city1">
         </p>
         <p>
             <label>When are you arriving?</label>
-            <input style="border: 1px solid black;" type="text" class="tripStart">
+            <input style="border: 1px solid black;" type="text" class="tripStart1">
         </p>
         <p>
             <label>When are you returning home?</label>
-            <input style="border: 1px solid black;" type="text" class="tripEnd">
+            <input style="border: 1px solid black;" type="text" class="tripEnd1">
         </p>
         <br><button style="background-color:black;" class="formSubmit" onclick="setValues()"><a href="./advisor.html">Submit</a></button>
         <!-- <a href="#" rel="modal:close">Close</a> -->

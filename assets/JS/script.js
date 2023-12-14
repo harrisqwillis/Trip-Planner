@@ -2,9 +2,10 @@ var formSubmit = document.querySelector(".formSubmit");
 
 
 function setValues() {
-    var city = document.querySelector(".city").value;
-    var tripStart = document.querySelector(".tripStart").value;
-    var tripEnd = document.querySelector(".tripEnd").value;
+    var cityInput = document.querySelector(".city1").value;
+    var city = cityInput.split(" ").join("%20");
+    var tripStart = document.querySelector(".tripStart1").value;
+    var tripEnd = document.querySelector(".tripEnd1").value;
     console.log(city);
     console.log(tripStart);
     console.log(tripEnd);
