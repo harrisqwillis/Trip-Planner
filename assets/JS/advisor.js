@@ -8,11 +8,11 @@ var tripStart = JSON.parse(localStorage.getItem("tripStart"));
 var tripEnd = JSON.parse(localStorage.getItem("tripEnd"));
 
 function displayWeather(future, id) {
-    var forecastItem = document.createElement('div');
-    forecastItem.style.color = "white";
-    id.appendChild(forecastItem);
-    forecastItem.classList = 'enter tailwind classes';
-    forecastItem.innerHTML = future;
+    id.innerHTML = future;
+}
+
+function displayWeatherIcon(future, id) {
+    id.innerHTML = `<img src="https:${future}"></img>`;
 }
 
 function getApi() {
@@ -24,8 +24,8 @@ function getApi() {
                 var weather = data.forecast.forecastday[0].day;
                 displayWeather(weather.maxtemp_f, maxTemp);
                 displayWeather(weather.mintemp_f, minTemp);
-                displayWeather(weather.condition, condition);
-                displayWeather(weather.totalprecip_in);
+                displayWeatherIcon(weather.condition.icon, condition);
+                displayWeather(data.forecast.forecastday[0].astro.sunset, sunset);
                 console.log(data);
             })
         }
@@ -55,8 +55,31 @@ function getHotels() {
 
 getHotels();
 
-function displayHotels() {
-
+function displayHotels(hotels) {
+    if (hotels.length === 0) {
+        advisorDisplay.textContent = 'No hotel listings found.';
+      return;
+    }
+  
+    for (var i = 0; i < hotels.length; i++) {
+      var hotelName = hotels[i].name;
+  
+      var hotelEl = document.createElement('a');
+      hotelEl.classList = 'list-item flex-row justify-space-between align-center';
+      hotelEl.setAttribute('href', './single-repo.html?repo=' + hotelName);
+  
+      var titleEl = document.createElement('span');
+      titleEl.textContent = hotelName;
+  
+      hotelEl.appendChild(titleEl);
+  
+      var statusEl = document.createElement('span');
+      statusEl.classList = 'flex-row align-center';
+  
+      hotelEl.appendChild(statusEl);
+  
+      hotelContainerEl.appendChild(hotelEl);
+    }
 };
 
-displayHotels();
+/* displayHotels(); */
