@@ -33,30 +33,30 @@ function getApi() {
 }
 getApi();
 
+function getHotels() {
+    var requestUrl = 'https://hotels4.p.rapidapi.com/locations/v3/search?q=' + city + '&locale=en_US&langid=1033&siteid=300000001';
+    var options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '61aa3457ffmsha49fc9252a0d3dfp15f830jsn1c1837e51518',
+            'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
+        }
+    };
 
-var displayAdvisor = function (hotels) {
-    if (hotels.length === 0) {
-        advisorDisplay.textContent = 'No hotel listings found.';
-      return;
-    }
-  
-    for (var i = 0; i < hotels.length; i++) {
-      var hotelName = hotels[i].name;
-  
-      var hotelEl = document.createElement('a');
-      hotelEl.classList = 'list-item flex-row justify-space-between align-center';
-      hotelEl.setAttribute('href', './single-repo.html?repo=' + hotelName);
-  
-      var titleEl = document.createElement('span');
-      titleEl.textContent = hotelName;
-  
-      hotelEl.appendChild(titleEl);
-  
-      var statusEl = document.createElement('span');
-      statusEl.classList = 'flex-row align-center';
-  
-      hotelEl.appendChild(statusEl);
-  
-      hotelContainerEl.appendChild(hotelEl);
-    }
+    fetch(requestUrl, options).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                console.log(data);
+            })
+        }
+    })
+        .catch(err => console.error(err));
 };
+
+getHotels();
+
+function displayHotels() {
+
+};
+
+displayHotels();
