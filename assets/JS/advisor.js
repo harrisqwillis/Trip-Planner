@@ -29,14 +29,13 @@ function getApi() {
 }
 getApi();
 
-function getAdvisor() {
-    var requestUrl = 'https://api.content.tripadvisor.com/api/v1/location/search?key=B023F0317F4C4F7FABFEB3113D8B5FD2&searchQuery=' + city + '&language=en';
+function getHotels() {
+    var requestUrl = 'https://hotels4.p.rapidapi.com/locations/v3/search?q=' + city + '&locale=en_US&langid=1033&siteid=300000001';
     var options = {
         method: 'GET',
-        // mode: 'no-cors',
         headers: {
-            accept: 'application/json',
-            referrer: 'https://harrisqwillis.github.io'
+            'X-RapidAPI-Key': '61aa3457ffmsha49fc9252a0d3dfp15f830jsn1c1837e51518',
+            'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
         }
     };
 
@@ -50,10 +49,10 @@ function getAdvisor() {
         .catch(err => console.error(err));
 };
 
-getAdvisor();
+getHotels();
 
-function displayAdvisor() {
+function displayHotels() {
 
 };
 
-displayAdvisor();
+displayHotels();
