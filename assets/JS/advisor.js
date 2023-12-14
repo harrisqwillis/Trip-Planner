@@ -14,7 +14,7 @@ function displayWeather(future) {
 
 function getApi() {
     var requestUrl = 'https://api.weatherapi.com/v1/future.json?key=ffd028c4f113423dad624715230812&q=' + city + '&dt=' + tripStart;
-  
+
     fetch(requestUrl).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
@@ -26,7 +26,7 @@ function getApi() {
                 console.log(data);
             })
         }
-      })
+    })
 }
 getApi();
 
