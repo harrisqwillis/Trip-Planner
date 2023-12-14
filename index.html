@@ -3,25 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/CSS/output.css">
+    <link rel="stylesheet" href="./assets/CSS/output.css">
     <!-- npx tailwindcss -i ./assets/CSS/input.css -o ./assets/CSS/output.css --watch -->
     <title>Trip Planner</title>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="/advisor.html">Trip Planner</a></li>
+            <li><a href="advisor.html">Trip Planner</a></li>
         </ul>
     </nav>
     <main>
+
         <div class="container">
             <div class="flex-center flex-column">
                 <h1>Welcome To Trip Planner!</h1>
-                <button>Get Started!</button>
-                
+                <button class="open-button" id="modal">Get Started!</button>
             </div>
         </div>
+
+        <dialog class="modal">
+            <form class="form flex-center flex-column" method="dialog">
+
+                <label class="label">Enter City<input class="input" type="text" placeholder="City"></label>
+                <label class="label">Start Date<input class="input" type="text" placeholder="MM/DD/YY"></label>
+                <label class="label">End Date<input class="input" type="text" placeholder="MM/DD/YY"></label>
+                <button class="submit-button" id="close" type="submit">Submit</button>
+            </form>
+        </dialog>
+
         <div class="main"></div>
+
+        <script src="./assets/JS/script.js"></script>
+        <script>
+            const modal = document.querySelector('.modal');
+            const openModal = document.querySelector('.open-button');
+
+            openModal.addEventListener('click', () => {
+                modal.showModal();
+            })
+        </script>
+
     </main>
 </body>
 </html>
