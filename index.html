@@ -18,32 +18,44 @@
         <div class="container">
             <div class="flex-center flex-column">
                 <h1>Welcome To Trip Planner!</h1>
-                <button class="open-button" id="modal">Get Started!</button>
+                <button class="open-button"><a href="#ex1" rel="modal:open">Get Started!</a></button>
             </div>
         </div>
 
-        <dialog class="modal">
-            <form class="form flex-center flex-column" method="dialog">
-
-                <label class="label">Enter City<input class="input" type="text" placeholder="City"></label>
-                <label class="label">Start Date<input class="input" type="text" placeholder="MM/DD/YY"></label>
-                <label class="label">End Date<input class="input" type="text" placeholder="MM/DD/YY"></label>
-                <button class="submit-button" id="close" type="submit">Submit</button>
-            </form>
-        </dialog>
+        <div id="ex1" class="modal">
+            <p class="form flex-center flex-column">
+                <label class="label">Where are you going?<input class="input city" type="text" placeholder="City"></label>
+                <label class="label">When are you arriving?<input class="input tripStart" type="text" placeholder="MM/DD/YY"></label>
+                <label class="label">When are you returning home?<input class="input tripEnd" type="text" placeholder="MM/DD/YY"></label>
+                <button class="submit-button formSubmit"  onclick="setValues()"><a href="./advisor.html">Submit</a></button>
+                <button class="submit-button"><a href="#" rel="modal:close">Close</a></button>
+            </p>
+        </div>
 
         <div class="main"></div>
-
-        <script src="./assets/JS/script.js"></script>
-        <script>
-            const modal = document.querySelector('.modal');
-            const openModal = document.querySelector('.open-button');
-
-            openModal.addEventListener('click', () => {
-                modal.showModal();
-            })
-        </script>
-
     </main>
+    <!-- <div id="ex1" class="modal">
+        <p>
+            <label>Where are you going?</label>
+            <input style="border: 1px solid black;" type="text" class="city">
+        </p>
+        <p>
+            <label>When are you arriving?</label>
+            <input style="border: 1px solid black;" type="text" class="tripStart">
+        </p>
+        <p>
+            <label>When are you returning home?</label>
+            <input style="border: 1px solid black;" type="text" class="tripEnd">
+        </p>
+        <br><button style="background-color:black;" class="formSubmit" onclick="setValues()"><a href="./advisor.html">Submit</a></button>
+        <a href="#" rel="modal:close">Close</a>
+    </div> -->
+     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+    <script src="./assets/JS/script.js"></script>
 </body>
 </html>
