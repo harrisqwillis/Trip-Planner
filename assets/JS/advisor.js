@@ -18,7 +18,12 @@ var addresses = [
     "2466 MacBeth Avenue",
     "552 Montgue Avenue",
     "1577 Friar Way",
-    "152 Capulet Circle"
+    "152 Capulet Circle",
+    "3252 Alpine Drive",
+    "932 Sanderling Drive",
+    "12 Dobson Way",
+    "33693 Royal Ann Drive",
+    "904 H Street"
 ]
 
 function displayWeather(future, id) {
@@ -103,5 +108,3 @@ function displayHotels(array) {
       hotelContainerEl.style.display = "block";
     }
 };
-
-/* displayHotels(); */
