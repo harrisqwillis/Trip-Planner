@@ -1,18 +1,14 @@
-var minTemp = document.getElementById("Min-Temp");
-var maxTemp = document.getElementById("Max-Temp");
-var condition = document.getElementById("Condition");
-var sunset = document.getElementById("Sunset");
-var advisorDisplay = document.getElementById("advisorapi");
+var weatherDisplay = document.getElementById("weather-display");
 var city = JSON.parse(localStorage.getItem("city"));
 var tripStart = JSON.parse(localStorage.getItem("tripStart"));
 var tripEnd = JSON.parse(localStorage.getItem("tripEnd"));
 
-function displayWeather(future, id) {
-    id.innerHTML = future;
-}
-
-function displayWeatherIcon(future, id) {
-    id.innerHTML = `<img src="https:${future}"></img>`;
+function displayWeather(future) {
+    var forecastItem = document.createElement('div');
+    forecastItem.style.color = "white";
+    weatherDisplay.appendChild(forecastItem);
+    forecastItem.classList = 'enter tailwind classes';
+    forecastItem.innerHTML = future;
 }
 
 function getApi() {
@@ -22,10 +18,10 @@ function getApi() {
         if (response.ok) {
             response.json().then(function (data) {
                 var weather = data.forecast.forecastday[0].day;
-                displayWeather(weather.maxtemp_f, maxTemp);
-                displayWeather(weather.mintemp_f, minTemp);
-                displayWeatherIcon(weather.condition.icon, condition);
-                displayWeather(data.forecast.forecastday[0].astro.sunset, sunset);
+                displayWeather(weather.maxtemp_f);
+                displayWeather(weather.avgtemp_f);
+                displayWeather(weather.mintemp_f);
+                displayWeather(weather.totalprecip_in);
                 console.log(data);
             })
         }
@@ -55,31 +51,8 @@ function getHotels() {
 
 getHotels();
 
-function displayHotels(hotels) {
-    if (hotels.length === 0) {
-        advisorDisplay.textContent = 'No hotel listings found.';
-      return;
-    }
-  
-    for (var i = 0; i < hotels.length; i++) {
-      var hotelName = hotels[i].name;
-  
-      var hotelEl = document.createElement('a');
-      hotelEl.classList = 'list-item flex-row justify-space-between align-center';
-      hotelEl.setAttribute('href', './single-repo.html?repo=' + hotelName);
-  
-      var titleEl = document.createElement('span');
-      titleEl.textContent = hotelName;
-  
-      hotelEl.appendChild(titleEl);
-  
-      var statusEl = document.createElement('span');
-      statusEl.classList = 'flex-row align-center';
-  
-      hotelEl.appendChild(statusEl);
-  
-      hotelContainerEl.appendChild(hotelEl);
-    }
+function displayHotels() {
+
 };
 
-/* displayHotels(); */
+displayHotels();
