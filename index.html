@@ -18,44 +18,24 @@
         <div class="container">
             <div class="flex-center flex-column">
                 <h1>Welcome To Trip Planner!</h1>
-                <button class="open-button"><a href="#ex1" rel="modal:open">Get Started!</a></button>
+                <button class="open-button"><a class="button" href="#ex1" rel="modal:open">Get Started!</a></button>
             </div>
         </div>
 
-        <div id="ex1" class="modal">
+        <form id="ex1" class="modal">
             <p class="form flex-center flex-column">
                 <label class="label">Where are you going?<input class="input city" type="text" placeholder="City"></label>
                 <label class="label">When are you arriving?<input class="input tripStart" type="text" placeholder="MM/DD/YYYY"></label>
                 <label class="label">When are you returning home?<input class="input tripEnd" type="text" placeholder="MM/DD/YYYY"></label>
-                <button class="submit-button formSubmit"  onclick="setValues()"><a href="./advisor.html">Submit</a></button>
-                <button class="submit-button"><a href="#" rel="modal:close">Close</a></button>
+                <ul class="btnalign">
+                <li><button class="submit-button formSubmit"  onclick="setValues()"><a class="relative" href="./advisor.html">Submit</a></button></li>
+                <li><button class="submit-button"><a class="relative" href="#" rel="modal:close">Close</a></button></li>
+            </ul>
             </p>
-        </div>
+        </form>
 
         <div class="main"></div>
     </main>
-    <!-- <div id="ex1" class="modal">
-        <p>
-            <label>Where are you going?</label>
-            <input style="border: 1px solid black;" type="text" class="city1">
-        </p>
-        <p>
-            <label>When are you arriving?</label>
-            <input style="border: 1px solid black;" type="text" class="tripStart1">
-        </p>
-        <p>
-            <label>When are you returning home?</label>
-            <input style="border: 1px solid black;" type="text" class="tripEnd1">
-        </p>
-        <br><button style="background-color:black;" class="formSubmit" onclick="setValues()"><a href="./advisor.html">Submit</a></button>
-        <a href="#" rel="modal:close">Close</a>
-    </div> -->
-     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-
-    <!-- jQuery Modal -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-
     <script src="./assets/JS/script.js"></script>
 </body>
 </html>
