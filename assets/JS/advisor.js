@@ -2,10 +2,24 @@ var minTemp = document.getElementById("Min-Temp");
 var maxTemp = document.getElementById("Max-Temp");
 var condition = document.getElementById("Condition");
 var sunset = document.getElementById("Sunset");
-var advisorDisplay = document.getElementById("advisorapi");
+var hotelContainerEl = document.querySelector(".hotels");
 var city = JSON.parse(localStorage.getItem("city"));
 var tripStart = JSON.parse(localStorage.getItem("tripStart"));
 var tripEnd = JSON.parse(localStorage.getItem("tripEnd"));
+
+var addresses = [
+    "123 Main Street",
+    "591 Broadway Avenue",
+    "2056 Flower Road",
+    "5002 Apple Street",
+    "212 Height Boulevard",
+    "622 Earth Way",
+    "119 Marcelo Street",
+    "2466 MacBeth Avenue",
+    "552 Montgue Avenue",
+    "1577 Friar Way",
+    "152 Capulet Circle"
+]
 
 function displayWeather(future, id) {
     id.innerHTML = future;
@@ -47,6 +61,9 @@ function getHotels() {
         if (response.ok) {
             response.json().then(function (data) {
                 console.log(data);
+                var hotels = data.sr;
+                console.log(data.sr[0].regionNames.fullName);
+                displayHotels(hotels);
             })
         }
     })
@@ -55,30 +72,35 @@ function getHotels() {
 
 getHotels();
 
-function displayHotels(hotels) {
-    if (hotels.length === 0) {
-        advisorDisplay.textContent = 'No hotel listings found.';
+function displayHotels(array) {
+    if (array.length === 0) {
+        hotelContainerEl.textContent = 'No hotel listings found.';
       return;
     }
   
-    for (var i = 0; i < hotels.length; i++) {
-      var hotelName = hotels[i].name;
+    for (var i = 0; i < array.length; i++) {
+      var hotelName = array[i].regionNames.fullName;
   
       var hotelEl = document.createElement('a');
-      hotelEl.classList = 'list-item flex-row justify-space-between align-center';
-      hotelEl.setAttribute('href', './single-repo.html?repo=' + hotelName);
   
       var titleEl = document.createElement('span');
-      titleEl.textContent = hotelName;
+      titleEl.innerHTML = `<br>${hotelName}`;
   
       hotelEl.appendChild(titleEl);
-  
-      var statusEl = document.createElement('span');
-      statusEl.classList = 'flex-row align-center';
-  
-      hotelEl.appendChild(statusEl);
+      hotelEl.style.color = "blue";
   
       hotelContainerEl.appendChild(hotelEl);
+
+      var addressEl = document.createElement('span');
+      var address = addresses[Math.floor(Math.random()*addresses.length)];
+      addressEl.innerHTML = `<br>${address}`;
+      addressEl.style.color = "blue";
+      hotelContainerEl.appendChild(addressEl);
+
+      
+
+      hotelContainerEl.style.backgroundColor = "white";
+      hotelContainerEl.style.display = "block";
     }
 };
 
