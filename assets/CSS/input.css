@@ -188,6 +188,10 @@
   left: -3.5rem;
 }
 
+.hotels::-webkit-scrollbar {
+  display: none;
+}
+
 .hotels {
   max-height: 400px;
   max-width: 1000px;
@@ -203,5 +207,5 @@
   border-radius: 15px;
   border: 5px solid white;
   color: white;
-  overflow: auto;
+  overflow-y: auto;
 }
