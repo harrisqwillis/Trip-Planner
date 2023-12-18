@@ -92,14 +92,12 @@ function displayHotels(array) {
       titleEl.innerHTML = `<br>${hotelName}`;
   
       hotelEl.appendChild(titleEl);
-      hotelEl.style.color = "blue";
   
       hotelContainerEl.appendChild(hotelEl);
 
       var addressEl = document.createElement('span');
       var address = addresses[Math.floor(Math.random()*addresses.length)];
       addressEl.innerHTML = `<br>${address}`;
-      addressEl.style.color = "blue";
       hotelContainerEl.appendChild(addressEl);
 
       
