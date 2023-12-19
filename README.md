@@ -35,4 +35,3 @@ We welcome contributions to make our Trip Planner even more robust. Meet the min
 ## License
 
 Please refer to the [LICENSE](https://github.com/harrisqwillis/Trip-Planner/blob/main/LICENSE) in the repo.
-

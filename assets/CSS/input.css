@@ -19,6 +19,8 @@
     background-color: #000;
     overflow: hidden;
   }
+
+  /* Background */
   
   .main {
     position: fixed;
@@ -43,7 +45,7 @@
     }
   }
   
-  /* utilities */
+  /* Utilities */
   
   nav {
     background-image: linear-gradient(180deg, rgb(0, 0, 119, .8), rgba(1, 1, 155, 0));
@@ -188,6 +190,10 @@
   left: -3.5rem;
 }
 
+.hotels::-webkit-scrollbar {
+  display: none;
+}
+
 .hotels {
   max-height: 400px;
   max-width: 1000px;
@@ -203,5 +209,5 @@
   border-radius: 15px;
   border: 5px solid white;
   color: white;
-  overflow: auto;
+  overflow-y: auto;
 }
