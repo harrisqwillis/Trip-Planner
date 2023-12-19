@@ -18,6 +18,12 @@ var addresses = [
     "2466 MacBeth Avenue",
     "552 Montgue Avenue",
     "1577 Friar Way",
+    "152 Capulet Circle",
+    "3252 Alpine Drive",
+    "932 Sanderling Drive",
+    "12 Dobson Way",
+    "33693 Royal Ann Drive",
+    "904 H Street"
 ]
 
 function displayWeather(future, id) {
@@ -86,14 +92,12 @@ function displayHotels(array) {
       titleEl.innerHTML = `<br>${hotelName}`;
   
       hotelEl.appendChild(titleEl);
-      hotelEl.style.color = "blue";
   
       hotelContainerEl.appendChild(hotelEl);
 
       var addressEl = document.createElement('span');
       var address = addresses[Math.floor(Math.random()*addresses.length)];
       addressEl.innerHTML = `<br>${address}`;
-      addressEl.style.color = "blue";
       hotelContainerEl.appendChild(addressEl);
 
       
