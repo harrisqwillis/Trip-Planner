@@ -18,7 +18,6 @@ var addresses = [
     "2466 MacBeth Avenue",
     "552 Montgue Avenue",
     "1577 Friar Way",
-    "152 Capulet Circle"
 ]
 
 function displayWeather(future, id) {
@@ -103,5 +102,3 @@ function displayHotels(array) {
       hotelContainerEl.style.display = "block";
     }
 };
-
-/* displayHotels(); */
