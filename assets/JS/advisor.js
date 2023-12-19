@@ -7,6 +7,7 @@ var city = JSON.parse(localStorage.getItem("city"));
 var tripStart = JSON.parse(localStorage.getItem("tripStart"));
 var tripEnd = JSON.parse(localStorage.getItem("tripEnd"));
 
+//placeholder addresses
 var addresses = [
     "123 Main Street",
     "591 Broadway Avenue",
@@ -26,6 +27,7 @@ var addresses = [
     "904 H Street"
 ]
 
+//sets inner html to display data from weather fetch
 function displayWeather(future, id) {
     id.innerHTML = future;
 }
@@ -34,6 +36,7 @@ function displayWeatherIcon(future, id) {
     id.innerHTML = `<img src="https:${future}"></img>`;
 }
 
+//fetch request from weather API
 function getApi() {
     var requestUrl = 'https://api.weatherapi.com/v1/future.json?key=ffd028c4f113423dad624715230812&q=' + city + '&dt=' + tripStart;
 
@@ -52,6 +55,7 @@ function getApi() {
 }
 getApi();
 
+//fetch request from hotels API
 function getHotels() {
     var requestUrl = 'https://hotels4.p.rapidapi.com/locations/v3/search?q=' + city + '&locale=en_US&langid=1033&siteid=300000001';
     var options = {
@@ -77,6 +81,7 @@ function getHotels() {
 
 getHotels();
 
+//displays hotel data onto the page
 function displayHotels(array) {
     if (array.length === 0) {
         hotelContainerEl.textContent = 'No hotel listings found.';
