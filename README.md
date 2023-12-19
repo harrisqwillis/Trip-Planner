@@ -20,8 +20,10 @@ To get started, simply visit our [website](https://harrisqwillis.github.io/Trip-
 
 Explore the power of our Trip Planner by visiting our website. You can visualize your trip details and get valuable insights into lodging options and weather conditions. Take a sneak peek at what awaits you with our [screenshot](./assets/IMAGES/sc.png).
 
+Click the "Get Started!" button and enter your destination and trip dates into the form. After submitting the form, you will see weather predictions and nearby hotels for your trip.
+
 - <strong>WeatherAPI</strong>: Utilize the [WeatherAPI documentation](https://www.weatherapi.com/docs/) to integrate real-time weather data into your trip planning experience.
-- <strong>TripAdvisor API</strong>: Enhance your trip insights by integrating data from the [TripAdvisor API](https://www.tripadvisor.com/developers).
+- <strong>Hotels API</strong>: Enhance your trip insights by integrating data from the [Hotels API](https://rapidapi.com/apidojo/api/hotels4).
 
 ## Contributing
 
@@ -31,6 +33,8 @@ We welcome contributions to make our Trip Planner even more robust. Meet the min
 - [Evelyn Eidsath](https://github.com/eaeidsath) <br />
 - [Charles Tiffany](https://github.com/charleswt) <br />
 - [Ryan Gurley](https://github.com/gurleyryan)
+
+The star CSS effect was sourced from [https://codepen.io/wheresdara/pen/wvXBpwa](https://codepen.io/wheresdara/pen/wvXBpwa)
 
 ## License
 
