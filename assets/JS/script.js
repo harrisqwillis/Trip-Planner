@@ -1,6 +1,6 @@
 var formSubmit = document.querySelector(".formSubmit");
 
-
+//takes user input from the form and stores it to the browser
 function setValues() {
     var cityInput = document.querySelector(".city").value;
     var city = cityInput.split(" ").join("%20");
